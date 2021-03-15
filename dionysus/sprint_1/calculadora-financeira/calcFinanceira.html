@@ -11,22 +11,30 @@
 <body>
   <h1>Calculadora Financeira</h1>
   <h2>Dionysus</h2>
-  Insira o nome da sua empresa: <input id="nome_empresa">
-  <br><br>
-  Quantas garrafas são produzidas por lote: <input id="quant_garrafas">
-  <br><br>
-  Quantos lotes são produzidos por mês: <input id="lotes_mes">
-  <br><br>
-  Qual o custo para fabricar uma garrafa: <input id="preco_fabri_garrafas">
-  <br><br>
-  Quantas garrafas foram perdidas por mal armazenamento no lote: <input id="garrafas_perdidas">
-  <br><br>
-  Qual o valor da garrafa: <input id="valor_garrafas">
 
-  <br><br>
 
-  <button onclick="calcular_prejuizo()">Calcular</button>
-  <br><br>
+
+  <body style="background-color: black;">
+    <center>
+      <h1 style="color: red;">Calculadora Financeira</h1>
+      <h2 style="color: red;">Dionysus</h2>
+
+    <div style="border: solid rgb(255, 0, 0) 2px; width: 500px; border-radius: 5px; padding: 10px;">
+
+        <span style="color: white; font-size: 21px; font-family: Arial, Helvetica, sans-serif;">Insira o nome da empresa:</span> <input id="nome_empresa" style="font-size: 20px; border-radius: 10px;"><br>
+        <span style="color: white; font-size: 20px;  font-family: Arial, Helvetica, sans-serif;">Quantas garrafas são produzidas por lote:</span> <input id="quant_garrafas" style="font-size: 20px; border-radius: 10px;"><br>
+        <span style="color: white; font-size: 20px;  font-family: Arial, Helvetica, sans-serif;">Quantos lotes são produzidos por mês:</span> <input id="lotes_mes" style="font-size: 20px; border-radius: 10px;"><br>
+        <span style="color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">Qual o custo para fabricar uma garrafa:</span> <input id="preco_fabri_garrafas" style="font-size: 20px; border-radius: 10px;"><br>
+        <span style="color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">Garrafas perdidas por mal armazenamento no lote:</span> <input id="garrafas_perdidas" style="font-size: 20px; border-radius: 10px;"><br>
+        <span style="color: white; font-size: 21px; font-family: Arial, Helvetica, sans-serif;">Qual o valor da garrafa: </span><br><input id="valor_garrafas" style="font-size: 20px; border-radius: 10px; border: none;"><br><br>
+  
+
+        <button style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; border: none;  border-radius: 10px; background-color: rgb(255, 166, 0);" onclick="calcular_prejuizo()">Analisar Prejuizo</button><br><br>
+
+    </div>
+  
+
+  
   <div id="resultados">
 
   </div>
@@ -37,6 +45,7 @@
 <script>
   function calcular_prejuizo() {
     //Atribuindo variáveis
+    
     var nomeEmpresa = nome_empresa.value;
     var garrafasLote = Number(quant_garrafas.value);
     var valorGarrafa = Number(valor_garrafas.value);
@@ -55,7 +64,7 @@
 
     //Exibição
     resultados.innerHTML = `
-    <b>Análise de Prejuízo:</b> 
+    <span style="color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif;"><b>Análise de Prejuízo:</b> 
     <br>
     Sem a ajuda da Dionysus e com o mau armazenamento de suas garrafas, sua perda total seria de: R$ ${perdaTotal}
     <br>
@@ -65,7 +74,7 @@
     <br>
     Através dos serviços prestados da <i>Dionysus</i>, a <b>${nomeEmpresa}</b> irá conseguir obter um lucro de: R$ ${lucro} 
     <br>
-    Visando o longo prazo, em 1 ano, sua empresa irá conseguir obter um lucro de R$ ${lucro * 12}<br>
+    Visando o longo prazo, em 1 ano, sua empresa irá conseguir obter um lucro de R$ ${lucro * 12}<br></span>
 `;
   }  
 </script>
