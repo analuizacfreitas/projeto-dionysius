@@ -1,0 +1,16 @@
+	Essencial
+- Armazenamento das informações dos sensores == 21
+- Integração == 13
+- Aba de login para o produtor == 13
+- Mostrar dados obtidos pelos sensores --no site == 8
+- Armazenamento de parâmetros para manter o vinho em boa qualidade == 21
+
+	Importante
+- Armazenamento do feedback do cliente. == 5
+- Avaliação do cliente --no site == 5
+- Comunicação com o cliente. == 8
+
+	Desejável
+- Armazenamento de qual produtor está se destacando mais em relação a vendas == 8
+- Divulgação dos produtores no site; == 5
+-E comerce == 3
