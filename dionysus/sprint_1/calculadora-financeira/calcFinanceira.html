@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Financeira</title>
+</head>
+
+<body>
+  <h1>Calculadora Financeira</h1>
+  <h2>Dionysus</h2>
+  Insira o nome da sua empresa: <input id="nome_empresa">
+  <br><br>
+  Quantas garrafas são produzidas por lote: <input id="quant_garrafas">
+  <br><br>
+  Quantos lotes são produzidos por mês: <input id="lotes_mes">
+  <br><br>
+  Qual o custo para fabricar uma garrafa: <input id="preco_fabri_garrafas">
+  <br><br>
+  Quantas garrafas foram perdidas por mal armazenamento no lote: <input id="garrafas_perdidas">
+  <br><br>
+  Qual o valor da garrafa: <input id="valor_garrafas">
+
+  <br><br>
+
+  <button onclick="calcular_prejuizo()">Calcular</button>
+  <br><br>
+  <div id="resultados">
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  function calcular_prejuizo() {
+    //Atribuindo variáveis
+    var nomeEmpresa = nome_empresa.value;
+    var garrafasLote = Number(quant_garrafas.value);
+    var valorGarrafa = Number(valor_garrafas.value);
+    var precoPorGarrafa = Number(preco_fabri_garrafas.value);
+    var garrafasPerdidas = Number(garrafas_perdidas.value);
+    var lotesPorMes = Number(lotes_mes.value)
+
+    //Cálculos
+    var lucro = (valorGarrafa - precoPorGarrafa) * (garrafasLote) * (lotesPorMes);
+    var conversaoGarrafasPerdidas = (garrafasPerdidas * 100) / garrafasLote;
+    var perdaTotal = (valorGarrafa) * (garrafasPerdidas) * (lotesPorMes);
+
+    var totalGarrafas = (garrafasLote * lotesPorMes);
+
+    var percentualPerdasPorLote = (garrafasPerdidas * 100) / garrafasLote;
+
+    //Exibição
+    resultados.innerHTML = `
+    <b>Análise de Prejuízo:</b> 
+    <br>
+    Sem a ajuda da Dionysus e com o mau armazenamento de suas garrafas, sua perda total seria de: R$ ${perdaTotal}
+    <br>
+    e você perde ${percentualPerdasPorLote}% de garrafas por lote.
+    <br><br>
+    <b>Análise de Lucros (Obtendo os serviços da Dionysus):</b> 
+    <br>
+    Através dos serviços prestados da <i>Dionysus</i>, a <b>${nomeEmpresa}</b> irá conseguir obter um lucro de: R$ ${lucro} 
+    <br>
+    Visando o longo prazo, em 1 ano, sua empresa irá conseguir obter um lucro de R$ ${lucro * 12}<br>
+`;
+  }  
+</script>
